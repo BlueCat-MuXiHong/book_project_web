@@ -11,22 +11,44 @@
             :model="form"
             :rules="rules">
           <el-form-item prop="username">
-<!--            <input placeholder="用户名" v-model="form.username"/>-->
             <el-input class="input2" placeholder="请输入账号" v-model="form.username"></el-input>
           </el-form-item>
           <el-form-item prop="password">
-<!--            <input type="password" placeholder="密码" v-model="form.password"/>-->
             <el-input type="password" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
           </el-form-item>
           <el-form-item>
             <div class="submit-btn" @click="submit">立即登录</div>
-            <!--            <el-button type="primary" @click="submit">登录</el-button>-->
           </el-form-item>
         </el-form>
       </form>
 
       <form class="sign-up-form">
         <h2 class="form-title">注册</h2>
+        <el-form
+            ref="form"
+            label-width="140px"
+            class="sign-in-form"
+            :inline="true"
+            :model="form"
+            :rules="rules">
+          <el-form-item prop="username">
+            <el-input class="input2" placeholder="请输入账号" v-model="form.username"></el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input type="password" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
+          </el-form-item>
+          <el-form-item prop="Email">
+            <el-input type="Email" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
+          </el-form-item>
+          <el-form-item prop="text">
+            <el-input  class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <div class="submit-btn" @click="submit">立即注册</div>
+          </el-form-item>
+        </el-form>
+
+
         <input placeholder="用户名"/>
         <input type="password" placeholder="密码"/>
         <div class="submit-btn">立即注册</div>
@@ -56,11 +78,15 @@ export default {
       isActive: false,
       form: {
         username: '',
-        password: ''
+        password: '',
+        Email:'',
+        checkCode:''
       },
       rules: {
         username: [{required: true, trigger: 'blur', message: '请输入用户名'}],
-        password: [{required: true, trigger: 'blur', message: '请输入密码'}]
+        password: [{required: true, trigger: 'blur', message: '请输入密码'}],
+        Email: [{required: true, trigger: 'blur', message: '请输入用户名'}],
+        checkCode: [{required: true, trigger: 'blur', message: '请输入密码'}]
       }
     }
   },
@@ -166,7 +192,6 @@ export default {
 }
 
 
-
 ::v-deep .input2 .el-input__inner {
   width: 300px;
   height: 42px;
@@ -181,7 +206,7 @@ export default {
   border: none;
 }
 
-input,.submit-btn {
+input, .submit-btn {
   min-width: 300px;
   height: 42px;
   outline: none;
@@ -193,6 +218,7 @@ input,.submit-btn {
   background-color: #6267f513;
   border: none;
 }
+
 input::placeholder {
   color: #cccc;
 }
