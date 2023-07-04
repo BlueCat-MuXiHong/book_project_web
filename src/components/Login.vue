@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{'container':true,'sign-up-mode':isActive}">
+  <div class="container" :class="{'sign-up-mode':isActive}">
     <div class="form-warp">
       <form class="sign-in-form">
         <h2 class="form-title">登录</h2>
@@ -38,10 +38,10 @@
             <el-input type="password" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
           </el-form-item>
           <el-form-item prop="Email">
-            <el-input type="Email" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
+            <el-input type="Email" class="input2" placeholder="请输入密码" v-model="form.Email"></el-input>
           </el-form-item>
-          <el-form-item prop="text">
-            <el-input  class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
+          <el-form-item prop="checkCode">
+            <el-input  class="input2" placeholder="请输入密码" v-model="form.checkCode"></el-input>
           </el-form-item>
           <el-form-item>
             <div class="submit-btn" @click="submit">立即注册</div>
@@ -174,7 +174,7 @@ export default {
 
 .form-warp .sign-up-form {
   opacity: 0;
-  z-index: 3;
+  z-index: 4;
 }
 
 .container.sign-up-mode .form-warp {
