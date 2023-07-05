@@ -121,7 +121,6 @@ export default {
   width: 100%;
   overflow: hidden;
 }
-
 .container::before {
   content: " ";
   position: absolute;
@@ -135,7 +134,6 @@ export default {
   right: 48%;
   transform: translateY(-50%);
 }
-
 .container.sign-up-mode::before {
   transform: translate(100%, -50%);
 }
@@ -152,7 +150,6 @@ export default {
   grid-template-columns: 1fr;
   transition: 1s 0.7s ease-in-out;
 }
-
 .form-warp form {
   display: flex;
   align-items: center;
@@ -166,35 +163,26 @@ export default {
   opacity: 1;
   z-index: 4;
 }
-
 .form-title {
-  margin: 0 auto;
   color: #6266f5;
 }
-
 .form-warp .sign-up-form {
   opacity: 0;
-  z-index: 4;
+  z-index: 3;
 }
-
 .container.sign-up-mode .form-warp {
   left: 25%;
 }
-
 .container.sign-up-mode .sign-in-form {
   opacity: 0;
   z-index: 3;
 }
-
 .container.sign-up-mode .sign-up-form {
   opacity: 1;
   z-index: 4;
 }
-
-
-::v-deep .input2 .el-input__inner {
-  width: 300px;
-  height: 42px;
+input,
+.submit-btn {
   min-width: 300px;
   outline: none;
   padding: 12px 30px;
@@ -205,24 +193,9 @@ export default {
   background-color: #6267f513;
   border: none;
 }
-
-input, .submit-btn {
-  min-width: 300px;
-  height: 42px;
-  outline: none;
-  padding: 12px 30px;
-  line-height: 1;
-  font-size: 16px;
-  border-radius: 60px;
-  color: #333;
-  background-color: #6267f513;
-  border: none;
-}
-
 input::placeholder {
   color: #cccc;
 }
-
 .submit-btn {
   background-color: #6266f5;
   color: #FFF;
@@ -243,7 +216,6 @@ input::placeholder {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
 .desc-warp-item {
   display: flex;
   flex-direction: column;
@@ -254,32 +226,26 @@ input::placeholder {
   padding: 3rem 17% 2rem 12%;
   z-index: 6;
 }
-
 /* 事件穿透 BEGIN */
 .sign-in-desc {
   pointer-events: none;
 }
-
 .sign-up-mode .sign-in-desc {
   pointer-events: all;
 }
-
 .sign-up-mode .sign-up-desc {
   pointer-events: none;
 }
-
 /* 事件穿透 END */
 .content {
   width: 100%;
   transition: transform 0.9s ease-in-out;
   transition-delay: .6s;
 }
-
 .sign-in-desc img,
 .sign-in-desc .content {
   transform: translateX(800px);
 }
-
 .sign-up-mode .sign-in-desc img,
 .sign-up-mode .sign-in-desc .content {
   transform: translateX(0);
@@ -302,11 +268,9 @@ button {
   cursor: pointer;
   transition: all .3s ease;
 }
-
 button:active {
   background: rgba(255, 255, 255, .1);
 }
-
 img {
   width: 100%;
   display: block;
@@ -326,13 +290,11 @@ img {
     top: initial;
     transition: 2s ease-in-out;
   }
-
   .container.sign-up-mode::before {
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
   }
-
   .form-warp {
     width: 100%;
     top: 75%;
@@ -340,24 +302,20 @@ img {
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
   }
-
   .container.sign-up-mode .form-warp {
     top: 25%;
     left: 50%;
     transform: translate(-50%, 0);
   }
-
   img {
     width: 200px;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.7s;
   }
-
   .desc-warp {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 1fr;
   }
-
   .desc-warp-item {
     flex-direction: row;
     justify-content: space-around;
@@ -365,7 +323,6 @@ img {
     padding: 2.5rem 8%;
     grid-column: 1 / 2;
   }
-
   .sign-in-desc {
     grid-row: 3 / 4;
   }
@@ -391,9 +348,22 @@ img {
     bottom: 72%;
     left: 50%;
   }
-
   img {
     display: none;
   }
+}
+
+::v-deep .input2 .el-input__inner {
+  width: 300px;
+  height: 42px;
+  min-width: 300px;
+  outline: none;
+  padding: 12px 30px;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 60px;
+  color: #333;
+  background-color: #6267f513;
+  border: none;
 }
 </style>
