@@ -27,7 +27,6 @@
         <el-form
             ref="form"
             label-width="140px"
-            class="sign-in-form"
             :inline="true"
             :model="form"
             :rules="rules">
@@ -38,20 +37,15 @@
             <el-input type="password" class="input2" placeholder="请输入密码" v-model="form.password"></el-input>
           </el-form-item>
           <el-form-item prop="Email">
-            <el-input type="Email" class="input2" placeholder="请输入密码" v-model="form.Email"></el-input>
+            <el-input type="Email" class="input2" placeholder="请输入邮箱" v-model="form.Email"></el-input>
           </el-form-item>
           <el-form-item prop="checkCode">
-            <el-input  class="input2" placeholder="请输入密码" v-model="form.checkCode"></el-input>
+            <el-input  class="input2" placeholder="请输入验证码" v-model="form.checkCode"></el-input>
           </el-form-item>
           <el-form-item>
             <div class="submit-btn" @click="submit">立即注册</div>
           </el-form-item>
         </el-form>
-
-
-        <input placeholder="用户名"/>
-        <input type="password" placeholder="密码"/>
-        <div class="submit-btn">立即注册</div>
       </form>
     </div>
 
@@ -85,8 +79,8 @@ export default {
       rules: {
         username: [{required: true, trigger: 'blur', message: '请输入用户名'}],
         password: [{required: true, trigger: 'blur', message: '请输入密码'}],
-        Email: [{required: true, trigger: 'blur', message: '请输入用户名'}],
-        checkCode: [{required: true, trigger: 'blur', message: '请输入密码'}]
+        Email: [{required: true, trigger: 'blur', message: '请输入邮箱'}],
+        checkCode: [{required: true, trigger: 'blur', message: '请输入验证码'}]
       }
     }
   },
