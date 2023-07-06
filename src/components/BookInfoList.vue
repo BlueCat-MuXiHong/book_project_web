@@ -2,13 +2,14 @@
   <div>
     <div v-show="false">首页</div>
     <div>
-      <el-row :gutter="20">
+      <el-row>
         <el-col  class="el-col-model" :span="5" v-for="item in bookInfoList" :key="item.id">
-          <el-card :body-style="{ padding: '0px',}">
+          <el-card :body-style="{ padding: '0px'}" >
             <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
-            <div style="padding: 14px;height: 50px">
-              <span>书名：{{ item.bookName }}</span>
-              <span>作者：{{ item.bookAuthor }}</span>
+            <div style="padding: 5px;height: 60px;font-size: 12px;overflow: hidden"  >
+              <p style="width: 99%;overflow: hidden;">书名：{{ item.bookName }}</p>
+              <p>作者：{{ item.bookAuthor }}</p>
+              <p>状态：{{item.bookStatus==0?'连载':'完结'}}</p>
             </div>
           </el-card>
         </el-col>
@@ -30,7 +31,7 @@ export default {
       bookInfoList:[],
       bookInfoParams:{
         pageNo: 1,
-        pageSize: 30,
+        pageSize: 20,
         bookTypeList:[]
       }
     }
@@ -58,12 +59,11 @@ export default {
 <style scoped>
 
 .el-col-model{
-  width: 10%;
+  width: 20%;
   display: flex;
   margin-bottom: 20px;
-  //margin-left: 30px;
   justify-content: center;
-  //align-content: center;
+  align-content: center;
 }
 .time {
   font-size: 13px;
