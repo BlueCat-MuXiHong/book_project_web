@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-html, body, h3, p {
+html, body, h3, p{
     padding: 0;
     margin: 0;
 }

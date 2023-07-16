@@ -35,7 +35,11 @@ export default {
 .el-header{
     padding: 0;
 }
+/deep/ .el-main {
+    padding: 0;
+}
 .main{
+    padding: 0;
     background-color: #5cb3cc;
     background-image: url("../assets/imgs/img.png");
 }

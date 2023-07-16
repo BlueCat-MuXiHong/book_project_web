@@ -5,7 +5,7 @@
       <el-row>
         <el-col  class="el-col-model" :span="5" v-for="item in bookInfoList" :key="item.id">
           <el-card :body-style="{ padding: '0px'}" >
-            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
+            <img :src="item.bookImg" class="image">
             <div style="padding: 5px;height: 60px;font-size: 12px;overflow: hidden"  >
               <p style="width: 99%;overflow: hidden;">书名：{{ item.bookName }}</p>
               <p>作者：{{ item.bookAuthor }}</p>
